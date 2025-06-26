@@ -1,0 +1,29 @@
+* {
+  box-sizing: border-box
+}
+
+body {
+  background-color: gainsboro;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  /* Use a system font; if none are available, use an available sans-serif font */
+  font-family: system-ui, sans-serif;
+  /* Ensures full height compatibility across devices */
+  min-height: 100dvh;
+  margin: 0;
+}
+.board {
+  display: flex;
+  flex-wrap: wrap;
+  width: 325px;
+}
+
+.sqr {
+  width: 30%;
+  aspect-ratio: 1/1;
+  border: 3px solid black;
+  font-size: 64px;
+  text-align: center;
+}

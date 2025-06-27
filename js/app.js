@@ -92,7 +92,15 @@ const handleClick = (event) => {
     if (board[squareIndex] === 'X' || board[squareIndex] === 'C')
         return;
     console.log(squareIndex)
+    placePiece(squareIndex);
 };
+const placePiece = (index) => {
+    board[index] = turn;
+    render();
+}
+const checkForWinner = (combo) => {
+
+}
 init()
 
 

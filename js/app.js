@@ -39,10 +39,10 @@ const winningCombos = [
 
 /*---------------------------- Variables (state) ----------------------------*/
 
-let board = ['X', 'O', '', '', '', '', '', '', ''];
-let turn = 'X';
-let winner = false;
-let tie = false;
+let board;
+let turn;
+let winner;
+let tie;
 
 /*------------------------ Cached Element References ------------------------*/
 
@@ -58,7 +58,10 @@ const render = () => {
     updateMessage()
 }
 const init = () => {
-    console.dir('I work')
+    board = ['', '', '', '', '', '', '', '', ''];
+    turn = 'X';
+    winner = false;
+    tie = false;
     render()
 }
 const updateBoard = () => {
@@ -81,9 +84,15 @@ const updateMessage = () => {
         console.dir(newMessage.innerText)
     }
 }
-const handleClick = () => {
-
-}
+const handleClick = (event) => {
+    const squareIndex = event.target.id
+    if (winner === true) {
+        return;
+    };
+    if (board[squareIndex] === 'X' || board[squareIndex] === 'C')
+        return;
+    console.log(squareIndex)
+};
 init()
 
 
@@ -91,7 +100,7 @@ init()
 
 squareEls.forEach((square) => {
     square.addEventListener('click', (event) => {
-    handleClick(event);
-})    
+        handleClick(event);
+    })
 })
 
